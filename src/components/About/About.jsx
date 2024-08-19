@@ -1,5 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
+import BrandRankBusiness from '../../assets/BrandRankBusiness.png'
 
 
 const About = () => {
@@ -19,7 +20,7 @@ const About = () => {
             
             <div className='md:flex lg:flex md:gap-10 lg:gap-5 justify-center items-center p-12 min-h-[400px]'>
                 <div className='w-full md:w-1/2 lg:w-1/2'>
-                    <img src="src/assets/reviews-concept-landing-page.png" alt="topSearch" className='w-full' />
+                    <img src={BrandRankBusiness} alt="topSearch" className='w-full' />
                 </div>
                 
                 <div className='w-full md:w-1/2 lg:w-1/2 mt-4'>
