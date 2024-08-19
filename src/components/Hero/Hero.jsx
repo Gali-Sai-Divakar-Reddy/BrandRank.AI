@@ -46,21 +46,21 @@ const Hero = () => {
           )}
         />
       <div className='max-w-7xl mx-auto h-[70vh] flex flex-col justify-center items-center z-10'>
-        <motion.div
-          initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3}}
-          className={cn(
-            "group rounded-full border border-white/5 bg-[#EAEEFE] text-base text-white transition-all ease-in hover:cursor-pointer hover:hover:bg-neutral-800 z-10",
-          )}
-        >
-          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 ">
-            <span>✨ Introducing BrandRank.AI</span>
-            {/* <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
-          </AnimatedShinyText>
-        </motion.div>
+        
         <div className="flex flex-col  justify-center items-center mt-6 lg:mt-20 z-20">
-          
+          <motion.div
+            initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3}}
+            className={cn(
+              "group rounded-full border border-white/5 bg-[#EAEEFE] text-base text-white transition-all ease-in hover:cursor-pointer hover:hover:bg-neutral-800 z-10",
+            )}
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 ">
+              <span>✨ Introducing BrandRank.AI</span>
+              {/* <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
+            </AnimatedShinyText>
+          </motion.div>
           <WordPullUp
-            className="text-4xl sm:ml-2 sm:text-6xl lg:text-7xl text-center tracking-wide"
+            className="text-4xl sm:ml-2 sm:text-6xl lg:text-7xl text-center tracking-wide mt-10"
             words="Uncover the Truth Behind AI Answer Engines."
           />
           <motion.div initial="hidden" animate="visible" variants={wrapper}>
