@@ -20,7 +20,7 @@ const Footer = () => {
             <div className='flex justify-center gap-6 mt-6'>
                 {socials.map((item, index) => (
                     <div key={index}>
-                        <a href={item.href}>{item.icon}</a>
+                        <a href={item.href} target='_blank'>{item.icon}</a>
                     </div>
                 ))}
             </div>

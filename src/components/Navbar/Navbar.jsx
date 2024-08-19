@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NavbarItems from './NavbarItems.jsx'
-import { navItems } from '../../constants/index.js'
+import { navItems } from '../../constants/Constatns.jsx'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence, delay } from "framer-motion";
 
@@ -118,7 +118,7 @@ const Navbar = () => {
             <AnimatePresence>
                 {menuDrawerOpen && (
                     <motion.div
-                        className="fixed right-0 z-20 bg-gray-200 w-full p-12 flex flex-col justify-center items-center lg:hidden"
+                        className="fixed right-0 z-20 bg-[#EAEEFE] w-full p-12 flex flex-col justify-center items-center lg:hidden"
                         initial="hidden"
                         animate={menuDrawerOpen ? 'visible' : 'hidden'}
                         exit="hidden"

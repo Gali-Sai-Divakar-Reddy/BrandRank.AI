@@ -89,18 +89,18 @@ export const pricingOptions = [
 export const socials = [
     {
       icon: <Linkedin/>,
-      href: "#"
+      href: "https://www.linkedin.com/company/brandrank-ai/"
     },
     {
       icon: <Youtube/>,
-      href: "#"
+      href: "https://www.youtube.com/@brandrank-ai"
     },
     {
       icon: <Instagram/>,
-      href: "#"
+      href: "https://www.instagram.com/brandrank.ai/"
     },
     {
       icon: <Twitter/>,
-      href: "#"
+      href: "https://x.com/brandrankai"
     }
 ]
