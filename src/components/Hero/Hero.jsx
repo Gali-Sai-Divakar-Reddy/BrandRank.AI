@@ -1,42 +1,86 @@
 import React, {useRef} from 'react'
-import { BackgroundCircles } from './HeroDesign';
-import { ScrollParallax } from 'react-just-parallax';
+import { ArrowRight } from 'lucide-react';
+import { cn } from '../../lib/utils';
+import HeroDotPattern from './HeroDotPattern'
+import WordPullUp from './WordPullUp';
+import { motion } from 'framer-motion';
+import AnimatedShinyText from './AnimatedShinyText';
 
 const Hero = () => {
-    const parallaxRef = useRef(null);
+    const wrapper = {
+      hidden: {
+        opacity:0
+      },
+      visible:{
+        opacity:1,
+        transition:{
+          staggerChildren:0.125
+        }
+      }
+    }
+
+    const list = {
+      hidden:{
+        opacity:0, 
+        x:-100
+      },
+      visible:{
+          opacity:1,
+          x:0,
+          transition:{duration:0.5 , ease:[0.455, 0.03, 0.515, 0.955], delay:1}
+      }
+    }
+
+    const container = {
+      visible:{
+        transition:{
+          staggerChildren:0.025
+        }
+      }
+    }
   return (
-    <div className=" relative h-[50vh] w-full flex flex-col justify-center items-center text-center px-4 pt-[52px] bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_66%)] overflow-hidden">
-        <BackgroundCircles parallaxRef={parallaxRef}/>
-        <div className='container mx-auto z-10 px-4 flex flex-col justify-center items-center text-center overflow-hidden'>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-2 font-bold leading-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
-                Uncover the Truth Behind AI Answer Engines.
-            </h1>
-            <p className="p-2 leading-relaxed">
+    <section id='home' className='relative bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)]'>
+       <HeroDotPattern
+          className={cn(
+            "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+          )}
+        />
+      <div className='max-w-7xl mx-auto h-[100vh] flex flex-col justify-center items-center z-10'>
+        <motion.div
+          initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3}}
+          className={cn(
+            "group rounded-full border border-white/5 bg-[#EAEEFE] text-base text-white transition-all ease-in hover:cursor-pointer hover:hover:bg-neutral-800 z-10",
+          )}
+        >
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 ">
+            <span>✨ Introducing BrandRank.AI</span>
+            {/* <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
+          </AnimatedShinyText>
+        </motion.div>
+        <div className="flex flex-col  justify-center items-center mt-6 lg:mt-20 z-20">
+          
+          <WordPullUp
+            className="text-4xl sm:ml-2 sm:text-6xl lg:text-7xl text-center tracking-wide"
+            words="Uncover the Truth Behind AI Answer Engines."
+          />
+          <motion.div initial="hidden" animate="visible" variants={wrapper}>
+            <motion.p variants={list} className="mt-10 text-lg text-center max-w-4xl">
                 Empowering Brand Leaders with Actionable Insights in the Answer Economy
-            </p>
-            <div className='flex gap-1 items-center'>
-                <button className="mt-4 px-6 py-3 bg-neutral-900 text-white rounded">
-                    Get Started
-                </button>
-                <button className="mt-4 px-6 py-3  rounded">
-                    learn More
-                </button>
-            </div>
+            </motion.p>
+          </motion.div>
+          
+          <div className='flex gap-1 items-center my-8'>
+              <motion.button initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3, delay:1.5}} className="px-6 py-3 bg-neutral-900 text-white rounded-lg">
+                  Get Started
+              </motion.button>
+              <motion.button initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3, delay:1.5}} className="inline-flex items-center justify-center px-6 py-3 rounded-lg">
+                  learn More
+                  <ArrowRight className='ml-2 text-sm'/>
+              </motion.button>
+          </div>
         </div>
-    </div>
-    
-    // <section className='pt-8 pb-20 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_66%)]'>
-    //     <div className='container mx-auto'>
-    //         <div>
-    //             <h1 className='text-5xl font-bold tracking-tight bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6 p-2'>Uncover the Truth Behind AI Answer Engines.</h1>
-    //             <p className='text-xl text-[#010D3E] tracking-tight mt-6 p-2'>Empowering Brand Leaders with Actionable Insights in the Answer Economy</p>
-    //             <div className='flex gap-1 items-center mt-[30px]'>
-    //                 <button>Get Started</button>
-    //                 <button>Learn More</button>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </section>
+      </div>
+    </section>
   )
 }
 

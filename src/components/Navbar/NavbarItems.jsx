@@ -1,5 +1,5 @@
 import React from 'react'
-import { navItems } from '../../constants/index.js'
+import { navItems } from '../../constants/Constatns'
 import { motion } from 'framer-motion'
 
 const NavbarItems = ({ menuDrawerOpen }) => {
@@ -42,12 +42,18 @@ const NavbarItems = ({ menuDrawerOpen }) => {
         animate="visible"
         exit="hidden"
         variants={navList}
+        className='flex flex-col items-center justify-center'
     >
         {navItems.map((item, index) => (
             <motion.li key={index} className='py-4' variants={navItem}>
                 <a href={item.href}>{item.label}</a>
             </motion.li>
         ))}
+        <motion.li variants={navItem}>
+          <button className='px-6 py-4 bg-neutral-900 text-white rounded'>
+            Contact Us
+          </button>
+        </motion.li>
     </motion.ul>
   )
 }

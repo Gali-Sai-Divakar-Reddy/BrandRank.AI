@@ -82,7 +82,7 @@ const Navbar = () => {
                 </div>
                 <div className='overflow-hidden'>
                     <motion.div 
-                        className="hidden lg:flex space-x-12"
+                        className="hidden lg:flex items-center space-x-12"
                         initial="hidden" 
                         animate="visible" 
                         variants={navBarContainer}
@@ -94,9 +94,20 @@ const Navbar = () => {
                                 </li>
                             ))}
                         </ul>
+                        
                     </motion.div>
                 </div>
-
+                <div className='overflow-hidden'>
+                    <motion.button 
+                    className="hidden lg:block px-6 py-3 bg-neutral-900 text-white rounded"
+                    initial="hidden" 
+                    animate="visible" 
+                    variants={navBarContainer}
+                    >
+                        Contact us
+                    </motion.button>
+                </div>
+                
                 <div className="lg:hidden flex">
                     <button onClick={toggleNavbar}>
                         {menuDrawerOpen ? <X /> : <Menu />}
