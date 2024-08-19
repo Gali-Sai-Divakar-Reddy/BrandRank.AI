@@ -18,8 +18,9 @@ const About = () => {
                 </h2>
             </div>
             <div className='flex flex-col lg:flex-row justify-center items-center min-h[400px]'>
-                <div>
+                <div className='flex flex-col'>
                     <img src={BrandRankImage} alt="BrandRank" className='w-full md:w-[600px]'/>
+                    <a href="www.freepik.com" target='_blank' className='text-xs text-center text-gray-200/80'>Designed by Freepik</a>
                 </div>
                 <div className='mx-2 md:w-[500px]'>
                     <h5 className="mt-1 mb-6 text-2xl text-center">Navigating the Answer Economy</h5>

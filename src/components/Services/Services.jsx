@@ -9,11 +9,14 @@ const Services = () => {
             Service
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-5xl mt-10 lg:mt-20 tracking-wide">
-          Tailored Solutions to Elevate Your Brand's AI Strategy
+          Tailored Solutions to Elevate Your {" "}
+          <span className="bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            Brand's AI Strategy
+          </span>
         </h2>
       </div>
       
-      <div className="flex flex-wrap mt-10 lg:mt-20">
+      <div className="flex flex-col lg:flex-row mt-10 lg:mt-20">
         {pricingOptions.map((option, index) => (
           <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2 flex flex-col items-stretch">
             <div className="p-10 border border-neutral-700 rounded-xl flex flex-col justify-between flex-grow min-h-full">
