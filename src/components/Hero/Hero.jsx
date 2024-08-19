@@ -45,7 +45,7 @@ const Hero = () => {
             "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
           )}
         />
-      <div className='max-w-7xl mx-auto h-[100vh] flex flex-col justify-center items-center z-10'>
+      <div className='max-w-7xl mx-auto h-[70vh] flex flex-col justify-center items-center z-10'>
         <motion.div
           initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.3}}
           className={cn(
